@@ -30,3 +30,14 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+date = input("Enter a date (Month Year): ");
+
+print(date.split(" ")[0]);
+
+if len(date.split(" ")) == 2:
+    print(calendar.TextCalendar().formatmonth(int(date[1]), int(date[0])));
+else if len(date.split(" ")) == 1:
+    pass
+else:
+    pass
