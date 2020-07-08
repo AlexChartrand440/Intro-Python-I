@@ -33,11 +33,11 @@ from datetime import datetime
 
 date = input("Enter a date (Month Year): ");
 
-print(date.split(" ")[0]);
+print(len(date.split(" ")));
 
 if len(date.split(" ")) == 2:
-    print(calendar.TextCalendar().formatmonth(int(date[1]), int(date[0])));
-else if len(date.split(" ")) == 1:
-    pass
+    print(calendar.month(int(date.split(" ")[1]), int(date.split(" ")[0])));
+elif date.split(" ")[0].isnumeric() and len(date.split(" ")) == 1:
+    print(calendar.month(datetime.today().year, int(date.split(" ")[0])));
 else:
-    pass
+    print("You need to enter a: [month] and/or [month] [year]!");
